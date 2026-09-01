@@ -3,11 +3,28 @@ import { BusinessIdea, User, AnalysisResult } from '../types';
 const API_BASE = '/api';
 
 function getAuthHeader() {
-  const token = localStorage.getItem('ideaforge_token');
-  return token ? { 'Authorization': `Bearer ${token}` } : {};
+  try {
+    const token = localStorage.getItem('ideaforge_token');
+    return token ? { 'Authorization': `Bearer ${token}` } : {};
+  } catch (e) {
+    return {};
+  }
 }
 
-// Client-side Heuristic Synthesis Generator for Static Host Deployment (GitHub Pages / Netlify / Vercel)
+// Safely parse JSON or return null if response is HTML or invalid
+async function safeParseJson(res: Response): Promise<any> {
+  try {
+    const contentType = res.headers.get('content-type') || '';
+    if (contentType.includes('application/json')) {
+      return await res.json();
+    }
+  } catch (e) {
+    console.warn('JSON parsing skipped (received non-JSON response from host)');
+  }
+  return null;
+}
+
+// Client-side Heuristic Synthesis Generator for Static Host Deployment (GitHub Pages / Netlify / Standalone)
 function generateClientSynthesis(ideaData: any): BusinessIdea {
   const title = ideaData.title || ideaData.name || 'AI Business Venture';
   const desc = ideaData.description || 'An AI platform that analyzes data to suggest strategic outcomes.';
@@ -223,10 +240,8 @@ export async function loginUser(email: string, password: string): Promise<{ toke
       body: JSON.stringify({ email, password })
     });
     if (res.ok) {
-      const contentType = res.headers.get('content-type');
-      if (contentType && contentType.includes('application/json')) {
-        return res.json();
-      }
+      const data = await safeParseJson(res);
+      if (data && data.token) return data;
     }
   } catch (err) {}
 
@@ -251,10 +266,8 @@ export async function registerUser(userData: any): Promise<{ token: string; user
       body: JSON.stringify(userData)
     });
     if (res.ok) {
-      const contentType = res.headers.get('content-type');
-      if (contentType && contentType.includes('application/json')) {
-        return res.json();
-      }
+      const data = await safeParseJson(res);
+      if (data && data.token) return data;
     }
   } catch (err) {}
 
@@ -276,11 +289,8 @@ export async function getCurrentUser(): Promise<User> {
       headers: { ...getAuthHeader() }
     });
     if (res.ok) {
-      const contentType = res.headers.get('content-type');
-      if (contentType && contentType.includes('application/json')) {
-        const data = await res.json();
-        return data.user;
-      }
+      const data = await safeParseJson(res);
+      if (data && data.user) return data.user;
     }
   } catch (e) {}
 
@@ -300,11 +310,8 @@ export async function fetchUserIdeas(): Promise<BusinessIdea[]> {
       headers: { ...getAuthHeader() }
     });
     if (res.ok) {
-      const contentType = res.headers.get('content-type');
-      if (contentType && contentType.includes('application/json')) {
-        const data = await res.json();
-        return data.ideas || [];
-      }
+      const data = await safeParseJson(res);
+      if (data && Array.isArray(data.ideas)) return data.ideas;
     }
   } catch (err) {}
 
@@ -317,11 +324,8 @@ export async function fetchIdeaById(id: string): Promise<BusinessIdea | null> {
       headers: { ...getAuthHeader() }
     });
     if (res.ok) {
-      const contentType = res.headers.get('content-type');
-      if (contentType && contentType.includes('application/json')) {
-        const data = await res.json();
-        return data.idea;
-      }
+      const data = await safeParseJson(res);
+      if (data && data.idea) return data.idea;
     }
   } catch (err) {}
   return null;
@@ -331,11 +335,8 @@ export async function fetchPublicReport(shareToken: string): Promise<BusinessIde
   try {
     const res = await fetch(`${API_BASE}/ideas/report/${shareToken}`);
     if (res.ok) {
-      const contentType = res.headers.get('content-type');
-      if (contentType && contentType.includes('application/json')) {
-        const data = await res.json();
-        return data.idea;
-      }
+      const data = await safeParseJson(res);
+      if (data && data.idea) return data.idea;
     }
   } catch (err) {}
   return null;
@@ -353,14 +354,11 @@ export async function analyzeIdeaApi(ideaForm: any): Promise<BusinessIdea> {
     });
 
     if (res.ok) {
-      const contentType = res.headers.get('content-type');
-      if (contentType && contentType.includes('application/json')) {
-        const data = await res.json();
-        if (data && data.idea) return data.idea;
-      }
+      const data = await safeParseJson(res);
+      if (data && data.idea) return data.idea;
     }
   } catch (err) {
-    console.warn('Backend API unreachable, running client synthesis engine:', err);
+    console.warn('Backend API unreachable, using client synthesis engine:', err);
   }
 
   // Fallback to client synthesis if hosted on pure static host (GitHub Pages / Netlify / Standalone)
@@ -378,11 +376,8 @@ export async function askCoachApi(ideaId: string, question: string): Promise<str
       body: JSON.stringify({ ideaId, question })
     });
     if (res.ok) {
-      const contentType = res.headers.get('content-type');
-      if (contentType && contentType.includes('application/json')) {
-        const data = await res.json();
-        if (data && data.reply) return data.reply;
-      }
+      const data = await safeParseJson(res);
+      if (data && data.reply) return data.reply;
     }
   } catch (err) {}
 
@@ -395,10 +390,8 @@ export async function fetchAdminMetrics(): Promise<any> {
       headers: { ...getAuthHeader() }
     });
     if (res.ok) {
-      const contentType = res.headers.get('content-type');
-      if (contentType && contentType.includes('application/json')) {
-        return res.json();
-      }
+      const data = await safeParseJson(res);
+      if (data && data.totalUsers) return data;
     }
   } catch (err) {}
 
@@ -431,10 +424,8 @@ export async function compareIdeasApi(ideaIds: string[]): Promise<any> {
       body: JSON.stringify({ ideaIds })
     });
     if (res.ok) {
-      const contentType = res.headers.get('content-type');
-      if (contentType && contentType.includes('application/json')) {
-        return res.json();
-      }
+      const data = await safeParseJson(res);
+      if (data && data.recommendedIdeaId) return data;
     }
   } catch (err) {}
   
