@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
+  base: './', // Ensures relative assets load on GitHub Pages, Netlify, and subfolder URLs
   plugins: [react()],
   server: {
     port: 3000,
