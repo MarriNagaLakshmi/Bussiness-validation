@@ -84,37 +84,37 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartValidation, onT
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 overflow-hidden">
+    <div className="min-h-screen bg-warm-950 text-stone-100 overflow-hidden">
       
       {/* Hero Section */}
       <section className="relative pt-20 pb-24 md:pt-28 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-emerald-600/10 rounded-full blur-[140px] pointer-events-none"></div>
 
         <div className="text-center max-w-4xl mx-auto space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-semibold tracking-wide backdrop-blur-md">
-            <Sparkles className="w-3.5 h-3.5 text-indigo-400 animate-pulse" />
-            <span>Next-Gen AI Business Validation Platform v1.0</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold tracking-wide backdrop-blur-md">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+            <span>Human-Centric Startup Validation System v1.0</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
             Turn Your Business Idea Into a <span className="gradient-text">Data-Driven Decision.</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-warm-300 max-w-2xl mx-auto leading-relaxed">
             Validate your startup idea with AI-powered market research, competitor analysis, financial insights, risk assessment, and actionable growth strategies.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={onStartValidation}
-              className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-xl shadow-indigo-600/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-xl shadow-emerald-900/40 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group"
             >
               🚀 Validate My Idea
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <button
               onClick={onTryDemo}
-              className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700/80 transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold bg-warm-900 hover:bg-warm-800 text-stone-200 border border-warm-700/80 transition-all flex items-center justify-center gap-2"
             >
               📊 Explore Live Demo
             </button>
@@ -122,13 +122,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartValidation, onT
 
           {/* Interactive UI Mockup Visualization */}
           <div className="pt-12 relative">
-            <div className="relative rounded-2xl glass-card border border-slate-800 shadow-2xl overflow-hidden p-4 sm:p-6 bg-slate-900/90 backdrop-blur-xl">
-              <div className="flex items-center justify-between pb-4 border-b border-slate-800/80">
+            <div className="relative rounded-2xl glass-card bg-warm-900/90 border border-warm-800 shadow-2xl overflow-hidden p-4 sm:p-6 backdrop-blur-xl">
+              <div className="flex items-center justify-between pb-4 border-b border-warm-800">
                 <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-rose-500/80"></div>
                   <div className="w-3 h-3 rounded-full bg-amber-500/80"></div>
                   <div className="w-3 h-3 rounded-full bg-emerald-500/80"></div>
-                  <span className="text-xs text-slate-400 font-mono ml-2">ideaforge-ai.app/validation-analysis</span>
+                  <span className="text-xs text-warm-400 font-mono ml-2">ideaforge-ai.app/validation-analysis</span>
                 </div>
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
                   LIVE VALIDATION RESULT
@@ -138,10 +138,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartValidation, onT
               {/* Mockup Preview Grid */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6 text-left">
                 {/* Dial Score Mock */}
-                <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col items-center justify-center text-center">
-                  <div className="w-24 h-24 rounded-full border-4 border-indigo-500 flex flex-col items-center justify-center bg-indigo-500/10 shadow-lg shadow-indigo-500/20">
+                <div className="p-4 rounded-xl bg-warm-950/80 border border-warm-800 flex flex-col items-center justify-center text-center">
+                  <div className="w-24 h-24 rounded-full border-4 border-emerald-500 flex flex-col items-center justify-center bg-emerald-500/10 shadow-lg shadow-emerald-900/20">
                     <span className="text-2xl font-extrabold text-white font-heading">84</span>
-                    <span className="text-[9px] text-slate-400 font-semibold uppercase">/ 100 Score</span>
+                    <span className="text-[9px] text-warm-400 font-semibold uppercase">/ 100 Score</span>
                   </div>
                   <span className="mt-3 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
                     <CheckCircle2 className="w-3.5 h-3.5" /> 🟢 BUILD RECOMMENDATION
@@ -149,33 +149,33 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartValidation, onT
                 </div>
 
                 {/* Market Size TAM Mock */}
-                <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+                <div className="p-4 rounded-xl bg-warm-950/80 border border-warm-800 space-y-2">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-slate-400 font-semibold">Total Addressable Market</span>
-                    <span className="text-indigo-400 font-mono font-bold">$18.5 Billion</span>
+                    <span className="text-warm-400 font-semibold">Total Addressable Market</span>
+                    <span className="text-emerald-400 font-mono font-bold">$18.5 Billion</span>
                   </div>
-                  <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                    <div className="bg-indigo-500 h-full w-[85%]"></div>
+                  <div className="w-full bg-warm-800 h-2 rounded-full overflow-hidden">
+                    <div className="bg-emerald-500 h-full w-[85%]"></div>
                   </div>
-                  <p className="text-[11px] text-slate-400 pt-1">
+                  <p className="text-[11px] text-warm-400 pt-1">
                     Strong 14.2% CAGR demand growth in direct agricultural supply chain automation.
                   </p>
                 </div>
 
                 {/* Financial Break-even Mock */}
-                <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+                <div className="p-4 rounded-xl bg-warm-950/80 border border-warm-800 space-y-2">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-slate-400 font-semibold">Break-even Period</span>
+                    <span className="text-warm-400 font-semibold">Break-even Period</span>
                     <span className="text-emerald-400 font-mono font-bold">Month 7</span>
                   </div>
                   <div className="grid grid-cols-2 gap-2 text-xs pt-1">
-                    <div className="p-2 rounded bg-slate-900 border border-slate-800">
-                      <p className="text-[10px] text-slate-400">Year 1 Profit</p>
+                    <div className="p-2 rounded bg-warm-900 border border-warm-800">
+                      <p className="text-[10px] text-warm-400">Year 1 Profit</p>
                       <p className="font-bold text-emerald-400">$80,000</p>
                     </div>
-                    <div className="p-2 rounded bg-slate-900 border border-slate-800">
-                      <p className="text-[10px] text-slate-400">5-Yr Revenue</p>
-                      <p className="font-bold text-indigo-300">$3.4M</p>
+                    <div className="p-2 rounded bg-warm-900 border border-warm-800">
+                      <p className="text-[10px] text-warm-400">5-Yr Revenue</p>
+                      <p className="font-bold text-amber-300">$3.4M</p>
                     </div>
                   </div>
                 </div>
@@ -187,14 +187,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartValidation, onT
       </section>
 
       {/* Configurable Statistics Ticker */}
-      <section className="py-12 border-y border-slate-900 bg-slate-900/40">
+      <section className="py-12 border-y border-warm-900 bg-warm-900/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {stats.map((s, idx) => (
               <div key={idx} className="space-y-1">
                 <p className="text-3xl sm:text-4xl font-extrabold text-white font-heading gradient-text">{s.value}</p>
-                <p className="text-sm font-bold text-slate-200">{s.label}</p>
-                <p className="text-xs text-slate-400">{s.desc}</p>
+                <p className="text-sm font-bold text-stone-200">{s.label}</p>
+                <p className="text-xs text-warm-400">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -205,7 +205,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartValidation, onT
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <h2 className="text-3xl font-extrabold text-white">Everything You Need To Validate & Launch</h2>
-          <p className="text-slate-400 text-sm">
+          <p className="text-warm-400 text-sm">
             Powered by multi-LLM intelligence engines to analyze your idea from every founder perspective.
           </p>
         </div>
@@ -214,12 +214,12 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartValidation, onT
           {features.map((f, i) => {
             const IconComponent = f.icon;
             return (
-              <div key={i} className="p-6 rounded-2xl glass-card border border-slate-800/80 hover:border-indigo-500/40 transition-all hover:-translate-y-1 group">
-                <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-4 group-hover:scale-110 transition-transform">
+              <div key={i} className="p-6 rounded-2xl glass-card border border-warm-800/80 hover:border-emerald-500/40 transition-all hover:-translate-y-1 group">
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
                   <IconComponent className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">{f.title}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">{f.desc}</p>
+                <p className="text-xs text-warm-400 leading-relaxed">{f.desc}</p>
               </div>
             );
           })}
@@ -227,19 +227,19 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartValidation, onT
       </section>
 
       {/* 4-Step How It Works */}
-      <section className="py-20 border-t border-slate-900 bg-slate-900/20">
+      <section className="py-20 border-t border-warm-900 bg-warm-900/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
             <h2 className="text-3xl font-extrabold text-white">How IdeaForge AI Works</h2>
-            <p className="text-slate-400 text-sm">Four simple steps to transform raw concepts into investor-ready business plans.</p>
+            <p className="text-warm-400 text-sm">Four simple steps to transform raw concepts into investor-ready business plans.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
             {steps.map((step, idx) => (
-              <div key={idx} className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 relative">
-                <span className="text-3xl font-extrabold font-heading text-indigo-500/40">{step.num}</span>
+              <div key={idx} className="p-6 rounded-2xl bg-warm-900/60 border border-warm-800 space-y-3 relative">
+                <span className="text-3xl font-extrabold font-heading text-emerald-500/30">{step.num}</span>
                 <h3 className="text-base font-bold text-white">{step.title}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">{step.desc}</p>
+                <p className="text-xs text-warm-400 leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -250,23 +250,23 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartValidation, onT
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <h2 className="text-3xl font-extrabold text-white">Loved by Founders & Builders</h2>
-          <p className="text-slate-400 text-sm">Join over 10,000 entrepreneurs validating their next big venture.</p>
+          <p className="text-warm-400 text-sm">Join over 10,000 entrepreneurs validating their next big venture.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t, idx) => (
-            <div key={idx} className="p-6 rounded-2xl glass-card border border-slate-800 space-y-4">
+            <div key={idx} className="p-6 rounded-2xl glass-card border border-warm-800 space-y-4">
               <div className="flex items-center space-x-1 text-amber-400">
                 {[...Array(t.rating)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-amber-400" />
                 ))}
               </div>
-              <p className="text-xs text-slate-300 leading-relaxed italic">"{t.text}"</p>
-              <div className="flex items-center space-x-3 pt-2 border-t border-slate-800/60">
-                <img src={t.image} alt={t.name} className="w-10 h-10 rounded-full object-cover ring-2 ring-indigo-500/30" />
+              <p className="text-xs text-stone-300 leading-relaxed italic">"{t.text}"</p>
+              <div className="flex items-center space-x-3 pt-2 border-t border-warm-800/60">
+                <img src={t.image} alt={t.name} className="w-10 h-10 rounded-full object-cover ring-2 ring-emerald-500/30" />
                 <div>
                   <h4 className="text-xs font-bold text-white">{t.name}</h4>
-                  <p className="text-[11px] text-slate-400">{t.role}</p>
+                  <p className="text-[11px] text-warm-400">{t.role}</p>
                 </div>
               </div>
             </div>
@@ -275,23 +275,23 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartValidation, onT
       </section>
 
       {/* Configurable Pricing Section */}
-      <section className="py-20 border-t border-slate-900 bg-slate-900/30">
+      <section className="py-20 border-t border-warm-900 bg-warm-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
             <h2 className="text-3xl font-extrabold text-white">Simple, Transparent Pricing</h2>
-            <p className="text-slate-400 text-sm">Choose the plan that fits your startup journey.</p>
+            <p className="text-warm-400 text-sm">Choose the plan that fits your startup journey.</p>
             
             {/* Billing Toggle */}
-            <div className="inline-flex items-center p-1 rounded-xl bg-slate-900 border border-slate-800 text-xs">
+            <div className="inline-flex items-center p-1 rounded-xl bg-warm-900 border border-warm-800 text-xs">
               <button
                 onClick={() => setBillingCycle('monthly')}
-                className={`px-4 py-1.5 rounded-lg font-semibold transition-all ${billingCycle === 'monthly' ? 'bg-indigo-600 text-white' : 'text-slate-400'}`}
+                className={`px-4 py-1.5 rounded-lg font-semibold transition-all ${billingCycle === 'monthly' ? 'bg-emerald-600 text-white' : 'text-warm-400'}`}
               >
                 Monthly
               </button>
               <button
                 onClick={() => setBillingCycle('annual')}
-                className={`px-4 py-1.5 rounded-lg font-semibold transition-all ${billingCycle === 'annual' ? 'bg-indigo-600 text-white' : 'text-slate-400'}`}
+                className={`px-4 py-1.5 rounded-lg font-semibold transition-all ${billingCycle === 'annual' ? 'bg-emerald-600 text-white' : 'text-warm-400'}`}
               >
                 Annual <span className="text-[10px] font-bold text-emerald-300 ml-1">Save 20%</span>
               </button>
@@ -301,32 +301,32 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartValidation, onT
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             {/* Free */}
-            <div className="p-8 rounded-2xl glass-card border border-slate-800 space-y-6 flex flex-col justify-between">
+            <div className="p-8 rounded-2xl glass-card border border-warm-800 space-y-6 flex flex-col justify-between">
               <div className="space-y-4">
                 <h3 className="text-lg font-bold text-white">Free Plan</h3>
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-extrabold text-white font-heading">$0</span>
-                  <span className="text-xs text-slate-400">/ forever</span>
+                  <span className="text-xs text-warm-400">/ forever</span>
                 </div>
-                <p className="text-xs text-slate-400">Ideal for students and first-time founders exploring early concepts.</p>
-                <ul className="space-y-2.5 text-xs text-slate-300 pt-4 border-t border-slate-800">
+                <p className="text-xs text-warm-400">Ideal for students and first-time founders exploring early concepts.</p>
+                <ul className="space-y-2.5 text-xs text-stone-300 pt-4 border-t border-warm-800">
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> 3 AI Business Idea Validations</li>
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Basic Score Dial & Verdict</li>
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> 2x2 SWOT Matrix</li>
-                  <li className="flex items-center gap-2 text-slate-500 line-through"><CheckCircle2 className="w-4 h-4 text-slate-600" /> PDF Executive Report Export</li>
+                  <li className="flex items-center gap-2 text-warm-500 line-through"><CheckCircle2 className="w-4 h-4 text-warm-600" /> PDF Executive Report Export</li>
                 </ul>
               </div>
               <button
                 onClick={() => openAuthModal('signup')}
-                className="w-full py-3 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 transition-colors"
+                className="w-full py-3 rounded-xl text-xs font-bold bg-warm-900 hover:bg-warm-800 text-white border border-warm-700 transition-colors"
               >
                 Get Started Free
               </button>
             </div>
 
             {/* Pro */}
-            <div className="p-8 rounded-2xl glass-card border-2 border-indigo-500 space-y-6 flex flex-col justify-between relative bg-slate-900/90 shadow-xl shadow-indigo-600/10">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-indigo-600 text-white shadow">
+            <div className="p-8 rounded-2xl glass-card border-2 border-emerald-500 space-y-6 flex flex-col justify-between relative bg-warm-900/90 shadow-xl shadow-emerald-900/20">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-600 text-white shadow">
                 MOST POPULAR
               </span>
               <div className="space-y-4">
@@ -335,10 +335,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartValidation, onT
                   <span className="text-4xl font-extrabold text-white font-heading">
                     {billingCycle === 'monthly' ? '$29' : '$22'}
                   </span>
-                  <span className="text-xs text-slate-400">/ month</span>
+                  <span className="text-xs text-warm-400">/ month</span>
                 </div>
-                <p className="text-xs text-slate-400">For active founders requiring full market, financial, and risk intelligence.</p>
-                <ul className="space-y-2.5 text-xs text-slate-300 pt-4 border-t border-slate-800">
+                <p className="text-xs text-warm-400">For active founders requiring full market, financial, and risk intelligence.</p>
+                <ul className="space-y-2.5 text-xs text-stone-300 pt-4 border-t border-warm-800">
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> 100 Idea Validations / Month</li>
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Full TAM/SAM/SOM Market Sizing</li>
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> 5-Year Financial Calculator</li>
@@ -348,24 +348,24 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartValidation, onT
               </div>
               <button
                 onClick={onStartValidation}
-                className="w-full py-3 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 transition-all"
+                className="w-full py-3 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-900/30 transition-all"
               >
                 Start Pro Trial
               </button>
             </div>
 
             {/* Business */}
-            <div className="p-8 rounded-2xl glass-card border border-slate-800 space-y-6 flex flex-col justify-between">
+            <div className="p-8 rounded-2xl glass-card border border-warm-800 space-y-6 flex flex-col justify-between">
               <div className="space-y-4">
                 <h3 className="text-lg font-bold text-white">Business & Team</h3>
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-extrabold text-white font-heading">
                     {billingCycle === 'monthly' ? '$99' : '$79'}
                   </span>
-                  <span className="text-xs text-slate-400">/ month</span>
+                  <span className="text-xs text-warm-400">/ month</span>
                 </div>
-                <p className="text-xs text-slate-400">For venture studios, accelerators, and startup incubators.</p>
-                <ul className="space-y-2.5 text-xs text-slate-300 pt-4 border-t border-slate-800">
+                <p className="text-xs text-warm-400">For venture studios, accelerators, and startup incubators.</p>
+                <ul className="space-y-2.5 text-xs text-stone-300 pt-4 border-t border-warm-800">
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Unlimited Validations</li>
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Multi-Idea Side-by-Side Comparison</li>
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Pitch Deck Slide Generator</li>
@@ -374,7 +374,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartValidation, onT
               </div>
               <button
                 onClick={() => openAuthModal('signup')}
-                className="w-full py-3 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 transition-colors"
+                className="w-full py-3 rounded-xl text-xs font-bold bg-warm-900 hover:bg-warm-800 text-white border border-warm-700 transition-colors"
               >
                 Contact Sales
               </button>
@@ -386,14 +386,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartValidation, onT
 
       {/* Bottom CTA Banner */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-gradient-to-r from-indigo-900/60 via-indigo-600/40 to-sky-900/60 border border-indigo-500/30 p-8 sm:p-12 text-center space-y-6 relative overflow-hidden shadow-2xl">
+        <div className="rounded-3xl bg-gradient-to-r from-warm-900 via-emerald-950 to-warm-900 border border-emerald-500/30 p-8 sm:p-12 text-center space-y-6 relative overflow-hidden shadow-2xl">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Ready to Validate Your Next Business Idea?</h2>
-          <p className="text-slate-300 text-sm max-w-xl mx-auto">
+          <p className="text-warm-300 text-sm max-w-xl mx-auto">
             Stop guessing. Get instant data-driven market insights, financial models, and strategic roadmaps in under 60 seconds.
           </p>
           <button
             onClick={onStartValidation}
-            className="px-8 py-4 rounded-xl text-base font-bold bg-white text-indigo-900 hover:bg-indigo-50 shadow-xl transition-all hover:scale-105 inline-flex items-center gap-2"
+            className="px-8 py-4 rounded-xl text-base font-bold bg-white text-stone-900 hover:bg-stone-100 shadow-xl transition-all hover:scale-105 inline-flex items-center gap-2"
           >
             🚀 Launch IdeaForge AI Engine
           </button>

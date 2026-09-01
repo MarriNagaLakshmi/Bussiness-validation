@@ -64,9 +64,9 @@ export const ExploreIdeas: React.FC<ExploreIdeasProps> = ({ onSelectSampleIdea }
       
       <div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-white flex items-center gap-2">
-          <Compass className="w-6 h-6 text-sky-400" /> Explore Validated Business Ideas
+          <Compass className="w-6 h-6 text-emerald-400" /> Explore Validated Business Ideas
         </h1>
-        <p className="text-xs text-slate-400">Discover pre-analyzed business concepts, market trends, and startup feasibility scores</p>
+        <p className="text-xs text-warm-400">Discover pre-analyzed business concepts, market trends, and startup feasibility scores</p>
       </div>
 
       {/* Category Pills */}
@@ -76,7 +76,7 @@ export const ExploreIdeas: React.FC<ExploreIdeasProps> = ({ onSelectSampleIdea }
             key={c}
             onClick={() => setSelectedCat(c)}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
-              selectedCat === c ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+              selectedCat === c ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-900/20' : 'bg-warm-900 text-warm-400 hover:text-white border border-warm-800'
             }`}
           >
             {c}
@@ -87,10 +87,10 @@ export const ExploreIdeas: React.FC<ExploreIdeasProps> = ({ onSelectSampleIdea }
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {filtered.map(item => (
-          <div key={item.id} className="p-6 rounded-2xl glass-card border border-slate-800 space-y-4 hover:border-indigo-500/40 transition-all">
+          <div key={item.id} className="p-6 rounded-2xl glass-card border border-warm-800 space-y-4 hover:border-emerald-500/40 transition-all">
             <div className="flex justify-between items-start">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-400">{item.category}</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400">{item.category}</span>
                 <h3 className="text-lg font-bold text-white mt-0.5">{item.title}</h3>
               </div>
               {item.trending && (
@@ -100,26 +100,26 @@ export const ExploreIdeas: React.FC<ExploreIdeasProps> = ({ onSelectSampleIdea }
               )}
             </div>
 
-            <p className="text-xs text-slate-300 leading-relaxed">{item.description}</p>
+            <p className="text-xs text-stone-300 leading-relaxed">{item.description}</p>
 
-            <div className="grid grid-cols-3 gap-2 pt-2 border-t border-slate-800 text-[11px]">
+            <div className="grid grid-cols-3 gap-2 pt-2 border-t border-warm-800 text-[11px]">
               <div>
-                <span className="text-slate-500 block">AI Score</span>
+                <span className="text-warm-500 block">AI Score</span>
                 <span className="font-mono font-bold text-emerald-400 text-sm">{item.score}/100</span>
               </div>
               <div>
-                <span className="text-slate-500 block">Market</span>
-                <span className="font-semibold text-slate-200">{item.market}</span>
+                <span className="text-warm-500 block">Market</span>
+                <span className="font-semibold text-stone-200">{item.market}</span>
               </div>
               <div>
-                <span className="text-slate-500 block">Est. Investment</span>
-                <span className="font-semibold text-slate-200">{item.investment}</span>
+                <span className="text-warm-500 block">Est. Investment</span>
+                <span className="font-semibold text-stone-200">{item.investment}</span>
               </div>
             </div>
 
             <button
               onClick={() => onSelectSampleIdea(item)}
-              className="w-full py-2.5 rounded-xl text-xs font-bold bg-slate-900 hover:bg-indigo-600 text-slate-200 hover:text-white border border-slate-800 transition-colors flex items-center justify-center gap-1.5"
+              className="w-full py-2.5 rounded-xl text-xs font-bold bg-warm-900 hover:bg-emerald-600 text-stone-200 hover:text-white border border-warm-800 transition-colors flex items-center justify-center gap-1.5"
             >
               Explore Full Report <ArrowRight className="w-3.5 h-3.5" />
             </button>

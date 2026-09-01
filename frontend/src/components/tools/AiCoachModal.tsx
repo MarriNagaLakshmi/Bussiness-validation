@@ -48,21 +48,21 @@ export const AiCoachModal: React.FC<AiCoachModalProps> = ({ isOpen, idea, onClos
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-end bg-slate-950/80 backdrop-blur-md animate-fadeIn">
-      <div className="w-full max-w-lg h-full glass-card bg-slate-900 border-l border-slate-800 flex flex-col justify-between p-6 space-y-4 shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-end bg-warm-950/80 backdrop-blur-md animate-fadeIn">
+      <div className="w-full max-w-lg h-full glass-card bg-warm-900 border-l border-warm-800 flex flex-col justify-between p-6 space-y-4 shadow-2xl">
         
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+        <div className="flex items-center justify-between border-b border-warm-800 pb-4">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+            <div className="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
               <Bot className="w-5 h-5" />
             </div>
             <div>
               <h3 className="text-base font-bold text-white">AI Business Coach</h3>
-              <p className="text-[11px] text-slate-400 truncate max-w-xs">{idea?.title || 'Idea Advisor'}</p>
+              <p className="text-[11px] text-warm-400 truncate max-w-xs">{idea?.title || 'Idea Advisor'}</p>
             </div>
           </div>
-          <button onClick={onClose} className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+          <button onClick={onClose} className="p-2 rounded-lg text-warm-400 hover:text-white hover:bg-warm-800">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -72,12 +72,12 @@ export const AiCoachModal: React.FC<AiCoachModalProps> = ({ isOpen, idea, onClos
           {messages.map((m, i) => (
             <div key={i} className={`flex items-start gap-2.5 ${m.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
               {m.sender === 'coach' && (
-                <div className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white text-xs shrink-0">
+                <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center text-white text-xs shrink-0">
                   <Bot className="w-4 h-4" />
                 </div>
               )}
               <div className={`p-3.5 rounded-2xl text-xs leading-relaxed max-w-xs sm:max-w-md ${
-                m.sender === 'user' ? 'bg-indigo-600 text-white rounded-tr-none' : 'bg-slate-950 border border-slate-800 text-slate-200 rounded-tl-none'
+                m.sender === 'user' ? 'bg-emerald-600 text-white rounded-tr-none' : 'bg-warm-950 border border-warm-800 text-stone-200 rounded-tl-none'
               }`}>
                 {m.text}
               </div>
@@ -85,7 +85,7 @@ export const AiCoachModal: React.FC<AiCoachModalProps> = ({ isOpen, idea, onClos
           ))}
 
           {isAsking && (
-            <div className="flex items-center gap-2 text-xs text-indigo-400">
+            <div className="flex items-center gap-2 text-xs text-emerald-400">
               <Bot className="w-4 h-4 animate-spin" /> Thinking...
             </div>
           )}
@@ -97,7 +97,7 @@ export const AiCoachModal: React.FC<AiCoachModalProps> = ({ isOpen, idea, onClos
             <button
               key={i}
               onClick={() => setQuestion(qp)}
-              className="px-2.5 py-1 rounded-full bg-slate-950 hover:bg-slate-800 border border-slate-800 text-[10px] text-slate-300 whitespace-nowrap"
+              className="px-2.5 py-1 rounded-full bg-warm-950 hover:bg-warm-800 border border-warm-800 text-[10px] text-stone-300 whitespace-nowrap"
             >
               {qp}
             </button>
@@ -105,18 +105,18 @@ export const AiCoachModal: React.FC<AiCoachModalProps> = ({ isOpen, idea, onClos
         </div>
 
         {/* Input Bar */}
-        <form onSubmit={handleSend} className="relative pt-2 border-t border-slate-800">
+        <form onSubmit={handleSend} className="relative pt-2 border-t border-warm-800">
           <input
             type="text"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
             placeholder="Ask your AI coach a question..."
-            className="w-full pl-4 pr-12 py-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+            className="w-full pl-4 pr-12 py-3 rounded-xl bg-warm-950 border border-warm-800 text-xs text-white placeholder-warm-500 focus:outline-none focus:border-emerald-500"
           />
           <button
             type="submit"
             disabled={isAsking || !question.trim()}
-            className="absolute right-2 top-4 p-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white disabled:opacity-50 transition-colors"
+            className="absolute right-2 top-4 p-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white disabled:opacity-50 transition-colors"
           >
             <Send className="w-3.5 h-3.5" />
           </button>
